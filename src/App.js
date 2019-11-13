@@ -1,26 +1,58 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Header from "./components/Header.js";
+import "./App.css";
+import logo from "./logo.svg";
+import MenuContainer from "./components/MenuContainer.js";
 
-function App() {
+const App = () => {
+  const [restaurant, setRestaurant] = useState({});
+  const [menu, setMenu] = useState({});
+  const [isLoading, setIsLoading] = useState(true); // Indicateur de chargement
+
+  const fetchData = async () => {
+    setIsLoading(true);
+    const response = await axios.get("https://deliveroo-api.now.sh/menu");
+    setRestaurant(response.data.restaurant);
+    setMenu(response.data.menu);
+    setIsLoading(false);
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {isLoading ? (
+        <p>Chargement...</p>
+      ) : (
+        <div>
+          <div className="header">
+            <img className="logo" src={logo} alt="logo"></img>
+          </div>
+
+          <div className="line-header"></div>
+          <Header
+            title={restaurant.name}
+            text={restaurant.description}
+            img={restaurant.picture}
+          ></Header>
+
+          <div className="container">
+            {Object.keys(menu).map((key, index) => {
+              return (
+                <MenuContainer
+                  key={"menuContainer" + index}
+                  title={key}
+                  menus={menu[key]}
+                ></MenuContainer>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </>
   );
-}
+};
 
 export default App;

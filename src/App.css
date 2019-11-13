@@ -1,22 +1,105 @@
-.App {
-  text-align: center;
+.header {
+  margin-left: 260px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+.logo {
+  height: 55px;
+}
+.line-header {
+  height: 2px;
+  background-color: rgb(244, 245, 245);
+}
+.container-nav {
+  margin-left: 260px;
+  height: 280px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.header-title {
+  margin-top: 60px;
+  margin-bottom: 40px;
+  font-size: 33px;
+  color: black;
+}
+.header-text {
+  margin-right: 200px;
+  margin-bottom: 40px;
+  line-height: 27px;
+  font-size: 21px;
+  color: grey;
 }
 
-.App-logo {
-  height: 40vmin;
+.img-nav {
+  min-width: 370px;
+  height: 200px;
+  margin: 40px 260px 40px 0px;
+  border: 1px;
+  border-radius: 5%;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  background-color: rgb(244, 245, 245);
+}
+.menu-title {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+.menu {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-left: 260px;
+  margin-right: 440px;
 }
 
-.App-link {
-  color: #09d3ac;
+.menu-slide {
+  display: flex;
+  width: 440px;
+  height: 200px;
+  background-color: white;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  border: 1px;
+  border-radius: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.text-1 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.text-2 {
+  font-size: 15px;
+  color: grey;
+  margin-bottom: 5px;
+  overflow: hidden;
+  height: 90px;
+  width: 200px;
+}
+.text-3 {
+  font-size: 17px;
+  color: grey;
+}
+.menu-text {
+  max-height: 100%;
+  margin-right: 15px;
+  line-height: 22px;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+.img-meal {
+  width: 130px;
+  height: 140px;
+  margin: 15px 15px 15px 15px;
+  border: 1px;
+  border-radius: 10%;
+}
+.menu-items {
+  display: flex;
+  flex-wrap: wrap;
 }
