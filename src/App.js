@@ -39,15 +39,21 @@ const App = () => {
           ></Header>
 
           <div className="container">
-            {Object.keys(menu).map((key, index) => {
-              return (
-                <MenuContainer
-                  key={"menuContainer" + index}
-                  title={key}
-                  menus={menu[key]}
-                ></MenuContainer>
-              );
-            })}
+            <div className="container-1">
+              {Object.keys(menu).map((key, index) => {
+                return (
+                  <MenuContainer
+                    key={"menuContainer" + index}
+                    title={key}
+                    menus={menu[key]}
+                  ></MenuContainer>
+                );
+              })}
+            </div>
+            <div className="container-2">
+              <div className="valider-mon-panier">Valider mon panier</div>
+              <div className="text-4">Votre panier est vide</div>
+            </div>
           </div>
         </div>
       )}
